@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Accordion, AccordionGroup,} from "carbon-react/lib/components/accordion";
 import CarbonProvider from "carbon-react/lib/components/carbon-provider";
 import sageTheme from "carbon-react/lib/style/themes/sage";
 import GlobalStyle from "carbon-react/lib/style/global-style";
@@ -7,6 +8,10 @@ import GlobalStyle from "carbon-react/lib/style/global-style";
 import "carbon-react/lib/style/fonts.css";
 import DynamicForm from "./Components/DynamicForm";
 import {FormFields} from "./Config/FormsFields";
+import { Tabs, Tab } from "carbon-react/lib/components/tabs";
+import Help from "carbon-react/lib/components/help";
+import './App.css';
+
 
 function App  () {
   const [formData, setFormData] = useState({ data :[], current : {} });
@@ -28,9 +33,20 @@ function App  () {
   };
 
   return (
-    <CarbonProvider theme={sageTheme}>
+    <React.Fragment>
+         <div>
+               <header className="main__header">
+                    <p className="title_text">sage</p><span className="help_text"><u><Help>Need Help</Help>Help</u></span>
+                </header>
+        </div>
       <GlobalStyle />
-      <DynamicForm
+    <CarbonProvider theme={sageTheme}>
+      <h1 className="main_title">Generate Reports for Sage</h1>
+      <Tabs size="large" align="left" position="top" m={6}>
+           <Tab errorMessage="error" warningMessage="warning" infoMessage="info" tabId="tab-1" title="Layout Data" key="tab-1">
+       <AccordionGroup>
+        <Accordion title="Header">
+          <DynamicForm
           key={formData.current.id}
           className="headerForm"
           title="Header Data"
@@ -40,7 +56,18 @@ function App  () {
             onSubmit(model);
           }}
       />
+          </Accordion>
+      </AccordionGroup> 
+       </Tab>
+       <Tab errorMessage="error" warningMessage="warning" infoMessage="info" tabId="tab-2" title="Layout Preview" key="tab-2" className="tab__two">
+            <h3>Welcome to Sage Reports</h3>
+            <h3>Welcome to Sage Reports</h3>
+            <h3>Welcome to Sage Reports</h3>
+            <h3>Welcome to Sage Reports</h3>
+        </Tab>
+      </Tabs>
     </CarbonProvider>
+    </React.Fragment>
   );
 };
 
