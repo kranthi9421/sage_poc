@@ -63,7 +63,93 @@
 
 }
 
-.tab__two {
+/* .tab__two {
   position: absolute;
-  left: 50%;
+  left: 50%; 
+  margin-left: 50px; 
+} */
+
+ .tabs_div :hover {
+  cursor: pointer;
+}
+
+.tabs_div :focus {
+  outline: none !important ; 
+  cursor: pointer;
+}
+
+
+/* .grid_inputone {
+  width: 360px;
+}
+
+.grid_inputtwo {
+  position: absolute;
+  width: 350px;
+  right: 7%;
+}
+
+.grid_three {
+  width: 350px;
+}
+
+.grid_four {
+ position: absolute;
+ top: 61%;
+ left: 45%;
+ width: 350px;
+} */
+
+.grid_container{ 
+  margin: 0px;
+  padding: 0px;
+}
+
+.page_nav {
+ background: gray;
+ height: 40px;
+ border-radius: 5px;
+}
+
+.page_navtext {
+  color: rgb(20, 234, 20)
+}
+
+.grid_headingone {
+  background: skyblue;
+  height: 70px;
+  border-radius: 5px;
+  top: 34%;
+ }
+
+.grid_headingtwo {
+  background: rgb(238, 211, 142);
+  height: 150px;
+  border-radius: 5px;
+  top: 42%;
+}
+
+.grid_left {
+  background: rgb(155, 240, 155);
+   min-height: 120px;
+}
+
+.grid_right {
+  background: rgb(155, 240, 155) ;
+  min-height: 120px;
+}
+
+.page_body {
+  height: 100vh;
+  /* background-color: rgb(252, 217, 129); */
+}
+
+.table_div {
+  background-color:  rgb(252, 217, 129);
+}
+
+.submit_btn {
+  position: absolute;
+  top: 50%;
+  left: 52%;
 }

@@ -10,6 +10,9 @@ import DynamicForm from "./Components/DynamicForm";
 import {FormFields} from "./Config/FormsFields";
 import { Tabs, Tab } from "carbon-react/lib/components/tabs";
 import Help from "carbon-react/lib/components/help";
+import {FlatTable,FlatTableHead,FlatTableRow,FlatTableHeader, FlatTableBody, FlatTableCell} from "carbon-react/lib/components/flat-table"
+import { GridContainer, GridItem } from "carbon-react/lib/components/grid";
+import Pod from "carbon-react/lib/components/pod"
 import './App.css';
 
 function App  () {
@@ -72,7 +75,7 @@ function App  () {
 
       <CarbonProvider theme={sageTheme}>
       <h1 className="main_title">Generate Reports for SAGE BUSINESS </h1>
-      <Tabs size="large" align="left" position="top" m={6}>
+      <Tabs size="large" align="left" position="top" m={6} className="tabs_div" >
         <Tab errorMessage="error" warningMessage="warning" infoMessage="info" tabId="tab-1" title="Layout Data" key="tab-1">
           <AccordionGroup>
           {Object.keys(FormFields).map((key, index) => (
@@ -101,8 +104,87 @@ function App  () {
             </Box>
           </AccordionGroup> 
         </Tab>
-        <Tab errorMessage="error" warningMessage="warning" infoMessage="info" tabId="tab-2" title="Layout Preview" key="tab-2" className="tab__two">
-          <h3>Welcome to Sage Reports</h3>
+       <Tab errorMessage="error" align="right" warningMessage="warning"  infoMessage="info" tabId="tab-2" title="Layout Preview" key="tab-2" className="tab__two">
+   <div className="grid_container">
+    <GridContainer>
+      {/* <GridItem alignSelf="stretch" justifySelf="stretch" >
+          <div className="page_nav"><span className="page_navtext">Sage</span></div>
+     </GridItem> */}
+      <GridItem alignSelf="stretch" justifySelf="stretch" className="grid_heading">
+         <div className="grid_headingone">
+            H1 Heading
+         </div>
+      </GridItem>
+      <GridItem alignSelf="stretch" justifySelf="stretch" className="grid_heading"  gridColumn="1 / 7" >
+         <div className="grid_left">
+           H2 Heading
+         </div>
+      </GridItem>
+      <GridItem alignSelf="stretch" justifySelf="stretch" className="grid_heading"  gridColumn="7 / 13" >
+         <div className="grid_right">
+            H2 Heading
+            <Button buttonType="primary" noWrap className="submit_btn">
+                Submit update to HMRC
+              </Button>
+         </div>
+      </GridItem>
+      <GridItem alignSelf="stretch" justifySelf="stretch" >
+         <div className="page_body">
+         <FlatTable colorTheme="transparent-white" className="table_div">
+         <FlatTableHead>
+          <FlatTableRow>
+            <FlatTableHeader>Business Expenses</FlatTableHeader>
+            <FlatTableHeader align="right">Total Expenses</FlatTableHeader>
+            <FlatTableHeader align="right">Total disallowable</FlatTableHeader>
+          </FlatTableRow>
+        </FlatTableHead>
+        <FlatTableBody>
+          <FlatTableRow>
+              <FlatTableCell>cost </FlatTableCell>
+              <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+          <FlatTableRow>
+              <FlatTableCell>costg </FlatTableCell>
+              <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+          <FlatTableRow>
+              <FlatTableCell>costg </FlatTableCell>
+              <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+          <FlatTableRow>
+          <FlatTableCell>cost </FlatTableCell>
+              <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+          <FlatTableRow>
+             <FlatTableCell>cost </FlatTableCell>
+             <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+          <FlatTableRow>
+             <FlatTableCell>cost </FlatTableCell>
+             <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+          <FlatTableRow>
+             <FlatTableCell>cost </FlatTableCell>
+             <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+          <FlatTableRow>
+              <FlatTableCell>cost </FlatTableCell>
+              <FlatTableCell align="right">33,000</FlatTableCell>
+              <FlatTableCell align="right">51,000</FlatTableCell>
+          </FlatTableRow>
+        </FlatTableBody>
+      </FlatTable>
+    </div>
+     </GridItem>
+    </GridContainer>
+        </div>
         </Tab>
       </Tabs>
       </CarbonProvider>

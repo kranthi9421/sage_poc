@@ -9,6 +9,7 @@ import Button from "carbon-react/lib/components/button";
 import ButtonToggle from "carbon-react/lib/components/button-toggle";
 import ButtonToggleGroup from "carbon-react/lib/components/button-toggle-group";
 import DialogAction from './DialogAction';
+import './DynamicForm.css';
 
 export default function DynamicForm (props) {
   const [isOpen , setIsOpen] = useState(false);
@@ -47,7 +48,7 @@ export default function DynamicForm (props) {
       // );
 
       let input = (
-      <Textbox 
+      <Textbox id="sage_texbox"
         {...props}
         className="form-input"
         type={type}
